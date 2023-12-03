@@ -1,14 +1,9 @@
-const API_KEY = "0f47e69b29b2449ebac83a0a32e6b603";
+const API_KEY = process.env.API_KEY;
 const url = "https://newsapi.org/v2/everything?q=";
 const newsContainer = document.getElementById("news-container");
 
 window.addEventListener("load", () => {
   fetchAndDisplayNews("india");
-});
-document.addEventListener("DOMContentLoaded", function () {
-  var paragraph = document.getElementById("limitedParagraph");
-  var words = paragraph.textContent.split(" ").slice(0, 100).join(" ");
-  paragraph.textContent = words + "...";
 });
 
 // Function to fetch and display news
