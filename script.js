@@ -1,5 +1,6 @@
 const url = "https://newsapi.org/v2/everything?q=";
 const newsContainer = document.getElementById("news-container");
+  const apiKey = process.env.NEWS_API_KEY;
 
 window.addEventListener("load", () => {
   fetchAndDisplayNews("india");
@@ -7,7 +8,6 @@ window.addEventListener("load", () => {
 
 // Function to fetch and display news
 async function fetchAndDisplayNews(query) {
-  const apiKey = process.env.NEWS_API_KEY;
   try {
     const response = await fetch(`${url}${query}&apiKey=${apiKey}`);
     const data = await response.json();
