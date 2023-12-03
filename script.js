@@ -1,6 +1,6 @@
 const url = "https://newsapi.org/v2/everything?q=";
 const newsContainer = document.getElementById("news-container");
-  const apiKey = process.env.NEWS_API_KEY  || '';
+  const apiKey =  "0f47e69b29b2449ebac83a0a32e6b603";
 
 window.addEventListener("load", () => {
   fetchAndDisplayNews("india");
