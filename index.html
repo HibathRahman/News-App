@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>News Web App</title>
+  </head>
+  <body>
+    <header>
+      <div class="head_logo">
+        <h1 class="heading">News 24 x 7</h1>
+        <img class="logo" src="./logo2.png" alt="logo" />
+      </div>
+
+      <div class="Search">
+        <input type="text" placeholder="ex : sports" id="input" />
+        <button id="btn">Search</button>
+      </div>
+    </header>
+
+    <ul>
+      <li id="Sports" onclick="onNavItemClick('General')">General</li>
+      <li id="Economy" onclick="onNavItemClick('Business')">Business</li>
+      <li id="India" onclick="onNavItemClick('Entertainment')">
+        Entertainment
+      </li>
+      <li id="India" onclick="onNavItemClick('Health')">Health</li>
+      <li id="India" onclick="onNavItemClick('Science')">Science</li>
+      <li id="India" onclick="onNavItemClick('Sports')">Sports</li>
+    </ul>
+
+    <div id="news-container"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
