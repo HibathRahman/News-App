@@ -7,9 +7,13 @@ window.addEventListener("load", () => {
 
 // Function to fetch and display news
 async function fetchAndDisplayNews(query) {
-  const apiKey = NEWS_API_KEY || '';
+  
   try {
-    const response = await fetch(`${url}${query}&apiKey=${apiKey}`);
+    // const response = await fetch(`${url}${query}&apiKey=${apiKey}`);
+    const response = await fetch(
+      "https://newsapi.org/v2/everything?q=india&apiKey=0f47e69b29b2449ebac83a0a32e6b603"
+    );
+
     const data = await response.json();
 
     if (data.status === "ok") {
