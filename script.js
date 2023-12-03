@@ -7,7 +7,7 @@ window.addEventListener("load", () => {
 
 // Function to fetch and display news
 async function fetchAndDisplayNews(query) {
-  const apiKey = import.NEWS_API_KEY || '';
+  const apiKey = NEWS_API_KEY || '';
   try {
     const response = await fetch(`${url}${query}&apiKey=${apiKey}`);
     const data = await response.json();
