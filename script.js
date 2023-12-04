@@ -19,7 +19,7 @@ async function fetchAndDisplayNews(query) {
         .map((article) => createNewsCard(article))
         .join("");
     } else {
-      newsContainer.innerHTML = "Failed to fetch news data.";
+      newsContainer.innerHTML = "You Can Search 10 NEWS Per Day ";
     }
   } catch (error) {
     console.error(error);
