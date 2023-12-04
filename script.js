@@ -1,23 +1,20 @@
-const url = "https://newsapi.org/v2/everything?q=";
-const newsContainer = document.getElementById("news-container");
 
+const newsContainer = document.getElementById("news-container");
 window.addEventListener("load", () => {
-  fetchAndDisplayNews("india");
+  fetchAndDisplayNews("sports");
 });
 
 // Function to fetch and display news
 async function fetchAndDisplayNews(query) {
-  
   try {
-    // const response = await fetch(`${url}${query}&apiKey=${apiKey}`);
     const response = await fetch(
-      "https://newsapi.org/v2/everything?q=india&apiKey=0f47e69b29b2449ebac83a0a32e6b603"
+      `https://gnews.io/api/v4/search?q=${query}&apikey=64401b3238944e124bcdee91c79a2d86`
     );
-
     const data = await response.json();
-
-    if (data.status === "ok") {
+    console.log(data);
+    if (data) {
       const articles = data.articles;
+      console.log(articles);
       newsContainer.innerHTML = articles
         .map((article) => createNewsCard(article))
         .join("");
@@ -34,10 +31,9 @@ async function fetchAndDisplayNews(query) {
 function createNewsCard(article) {
   return `
         <div class="news-card">
-            <img src="${article.urlToImage}" alt="" height=300px width:300px>
+            <img src="${article.image}" alt="" height=300px width:300px>
             <h2>${article.title}</h2>
             <p id="limitedParagraph">${article.description}</p>
-           
             <a href="${article.url}" target="_blank">Read more</a>
         </div>
     `;
@@ -48,10 +44,6 @@ fetchAndDisplayNews();
 let curSelected = null;
 function onNavItemClick(id) {
   fetchAndDisplayNews(id);
-  const navItem = document.getElementById(id);
-  curSelected?.classList.remove("active");
-  curSelected = navItem;
-  navItem.classList.add("active");
 }
 
 const searchbutton = document.getElementById("btn");
