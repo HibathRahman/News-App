@@ -23,7 +23,7 @@ async function fetchAndDisplayNews(query) {
     }
   } catch (error) {
     console.error(error);
-    newsContainer.innerHTML = "Failed to fetch news data.";
+    newsContainer.innerHTML = "You Can Search 10 NEWS Per Day";
   }
 }
 
